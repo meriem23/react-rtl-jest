@@ -1,5 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react";
-import { logRoles } from "@testing-library/dom";
+import { render, screen, fireEvent, logRoles } from "@testing-library/react";
 import Button from "./Button";
 import { replaceCamelWithSpaces } from "./Button";
 
@@ -109,7 +108,7 @@ test("testing that checkbox is enabled and disabled", () => {
   expect(checkbox).toBeEnabled();
   //check that checkbox is desabled
   fireEvent.click(checkbox);
-  expect(checkbox).toBeDisabled;
+  expect(checkbox).toBeDisabled();
 });
 
 test("testing that the button background color is gray when the button is disabled", () => {

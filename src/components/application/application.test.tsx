@@ -18,6 +18,7 @@ describe("Application", () => {
     //test if the submit  element of role button is present in the code
     const submitButtonElement = screen.getByRole("button");
     expect(submitButtonElement).toBeInTheDocument();
+    expect(submitButtonElement).toBeDisabled();
     //test if the heading elements of role heading are present in the code
     const pageHeading = screen.getByRole("heading", {
       level: 1,
