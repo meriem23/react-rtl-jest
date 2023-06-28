@@ -13,6 +13,7 @@
     "@types/node": "^16.18.12",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.10",
+    "husky-init": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -24,8 +25,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint":"eslint --ignore-path .gitignore .",
-    "coverage": "npm run test -- --coverage ."
+    "lint": "eslint --ignore-path .gitignore .",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,css,scss}\"",
+    "coverage": "npm run test -- --coverage .",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -58,6 +61,8 @@
   },
   "devDependencies": {
     "eslint-plugin-jest-dom": "^5.0.1",
-    "msw": "^1.2.2"
+    "msw": "^1.2.2",
+    "prettier": "^2.8.8",
+    "husky": "^8.0.0"
   }
 }
