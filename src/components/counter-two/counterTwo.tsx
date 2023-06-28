@@ -1,8 +1,8 @@
 type CounterTwoProps = {
-  count: number;
-  handleIncrement?: () => void;
-  handleDecrement?: () => void;
-};
+  count: number
+  handleIncrement?: () => void
+  handleDecrement?: () => void
+}
 
 const CounterTwo = (props: CounterTwoProps) => {
   return (
@@ -16,6 +16,6 @@ const CounterTwo = (props: CounterTwoProps) => {
         <button onClick={props.handleDecrement}>Decrement</button>
       )}
     </div>
-  );
-};
-export default CounterTwo;
+  )
+}
+export default CounterTwo

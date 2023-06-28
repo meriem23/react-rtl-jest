@@ -1,31 +1,31 @@
-import { screen, render } from "@testing-library/react";
-import { rest } from "msw";
-import Users from "./users";
-import { server } from "../../mocks/server";
+import { screen, render } from '@testing-library/react'
+import { rest } from 'msw'
+import Users from './users'
+import { server } from '../../mocks/server'
 
-describe("Users", () => {
-  test("renders corectly", () => {
-    render(<Users />);
-    const textElement = screen.getByText("Users");
-    expect(textElement).toBeInTheDocument();
-  });
-  test("renders a list of users", async () => {
-    render(<Users />);
-    const users = await screen.findAllByRole("listitem");
-    expect(users).toHaveLength(3);
-  });
-  test("renders error", async () => {
+describe('Users', () => {
+  test('renders corectly', () => {
+    render(<Users />)
+    const textElement = screen.getByText('Users')
+    expect(textElement).toBeInTheDocument()
+  })
+  test('renders a list of users', async () => {
+    render(<Users />)
+    const users = await screen.findAllByRole('listitem')
+    expect(users).toHaveLength(3)
+  })
+  test('renders error', async () => {
     //we reset the handler so it throws an error
     server.use(
       rest.get(
-        "https://jsonplaceholder.typicode.com/users",
+        'https://jsonplaceholder.typicode.com/users',
         (req, res, ctx) => {
-          return res(ctx.status(500));
+          return res(ctx.status(500))
         }
       )
-    );
-    render(<Users />);
-    const error = await screen.findByText("Error fetching users");
-    expect(error).toBeInTheDocument();
-  });
-});
+    )
+    render(<Users />)
+    const error = await screen.findByText('Error fetching users')
+    expect(error).toBeInTheDocument()
+  })
+})

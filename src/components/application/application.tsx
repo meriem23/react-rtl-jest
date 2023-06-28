@@ -45,7 +45,7 @@ const Application = () => {
         <button disabled>Submit</button>
       </form>
     </>
-  );
-};
+  )
+}
 
-export default Application;
+export default Application

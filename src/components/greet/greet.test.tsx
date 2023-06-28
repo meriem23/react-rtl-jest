@@ -1,5 +1,5 @@
-import { render, screen } from "@testing-library/react";
-import Greet from "./greet";
+import { render, screen } from '@testing-library/react'
+import Greet from './greet'
 
 //Normal testing
 //  test("Greet renders correctly", () => {
@@ -39,16 +39,16 @@ import Greet from "./greet";
 // });
 
 //DESCRIBE
-describe("Greet", () => {
-  test("renders correctly", () => {
-    render(<Greet />);
-    const textElement = screen.getByText(/hello/i);
-    expect(textElement).toBeInTheDocument();
-  });
+describe('Greet', () => {
+  test('renders correctly', () => {
+    render(<Greet />)
+    const textElement = screen.getByText(/hello/i)
+    expect(textElement).toBeInTheDocument()
+  })
 
-  test("renders name", () => {
-    render(<Greet name="Esra" />);
-    const textElement = screen.getByText("Hello Esra");
-    expect(textElement).toBeInTheDocument();
-  });
-});
+  test('renders name', () => {
+    render(<Greet name="Esra" />)
+    const textElement = screen.getByText('Hello Esra')
+    expect(textElement).toBeInTheDocument()
+  })
+})
